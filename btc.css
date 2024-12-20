@@ -1,0 +1,164 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #1c1c1e;
+    color: #ffffff;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.container {
+    width: 100%;
+    max-width: 400px;
+    padding: 20px;
+}
+
+.card {
+    background-color: #2c2c2e;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.warning {
+    display: flex;
+    align-items: center;
+    background-color: rgba(255, 165, 0, 0.1);
+    border: 1px solid rgba(255, 165, 0, 0.3);
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+.warning-icon {
+    width: 24px;
+    height: 24px;
+    margin-right: 10px;
+}
+
+.warning p {
+    font-size: 14px;
+    color: orange;
+    margin: 0;
+}
+
+.btc-label {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.btc-icon {
+    width: 32px;
+    height: 32px;
+    margin-right: 10px;
+}
+
+.coin-label {
+    font-size: 12px;
+    color: #999;
+    margin-left: 5px;
+}
+
+.qr-code {
+    background-color: white;
+    padding: 10px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.qr-code img {
+    max-width: 100%;
+    height: auto;
+}
+
+.address {
+    background-color: #3c3c3e;
+    border-radius: 5px;
+    padding: 10px;
+    text-align: center;
+    margin-bottom: 20px;
+    word-break: break-all;
+}
+
+.actions {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.action-btn {
+    background-color: transparent;
+    border: none;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+}
+
+.action-icon {
+    width: 24px;
+    height: 24px;
+    margin-bottom: 5px;
+}
+
+.deposit-info {
+    display: flex;
+    align-items: center;
+    background-color: rgba(0, 128, 0, 0.1);
+    border: 1px solid rgba(0, 128, 0, 0.3);
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+.deposit-icon {
+    width: 24px;
+    height: 24px;
+    margin-right: 10px;
+}
+
+.deposit-info h3 {
+    font-size: 16px;
+    margin: 0;
+}
+
+.deposit-info p {
+    font-size: 12px;
+    color: #999;
+    margin: 5px 0 0;
+}
+
+.transfer-note {
+    font-size: 14px;
+    color: #999;
+    margin-bottom: 20px;
+}
+
+.confirm-btn {
+    width: 100%;
+    background-color: #007AFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 10px;
+    }
+
+    .card {
+        padding: 15px;
+    }
+}
+

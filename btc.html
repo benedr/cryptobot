@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bitcoin Transfer</title>
+    <link rel="stylesheet" href="btc.css">
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <div class="warning">
+                <img src="https://api.iconify.design/lucide:alert-triangle.svg?color=orange" alt="Warning" class="warning-icon">
+                <p>Only send Bitcoin (BTC) assets to this address. Other assets will be lost forever.</p>
+            </div>
+            <div class="btc-label">
+                <img src="https://api.iconify.design/cryptocurrency:btc.svg?color=orange" alt="BTC" class="btc-icon">
+                <span>BTC</span>
+                <span class="coin-label">COIN</span>
+            </div>
+            <div class="qr-code">
+                <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=bc1q88zx269tcxuq5mqf90d2kpds9mgyc8jqez60xk" alt="QR Code">
+            </div>
+            <div class="address">
+                <p id="btcAddress">bc1q88zx269tcxuq5mqf90d2kpds9mgyc8jqez60xk</p>
+            </div>
+            <div class="actions">
+                <button id="copyBtn" class="action-btn">
+                    <img src="https://api.iconify.design/lucide:copy.svg?color=white" alt="Copy" class="action-icon">
+                    <span>Copy</span>
+                </button>
+                <button class="action-btn">
+                    <img src="https://api.iconify.design/lucide:settings.svg?color=white" alt="Set Amount" class="action-icon">
+                    <span>Set Amount</span>
+                </button>
+                <button class="action-btn">
+                    <img src="https://api.iconify.design/lucide:share.svg?color=white" alt="Share" class="action-icon">
+                    <span>Share</span>
+                </button>
+            </div>
+            <div class="deposit-info">
+                <img src="https://api.iconify.design/lucide:arrow-down.svg?color=green" alt="Deposit" class="deposit-icon">
+                <div>
+                    <h3>Deposit from exchange</h3>
+                    <p>By direct transfer from your account</p>
+                </div>
+            </div>
+            <div class="transfer-note">
+                <p>Note: Only transfer the exact BTC amount stated (3.5 Dollar worth) After transfer, click the button below to continue.</p>
+            </div>
+            <button class="confirm-btn" onclick="window.location.href='success.html'">I Have Completed the Transfer</button>
+        </div>
+    </div>
+    <script src="btc.js"></script>
+</body>
+</html>
+
+<!-- id="confirmBtn" -->

